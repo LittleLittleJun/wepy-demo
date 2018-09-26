@@ -1,0 +1,83 @@
+<style lang='less'>
+  .container-header {
+    width: 750rpx;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-item{
+    text-align: center;
+  }
+  .flex-grow{
+    flex-grow: 1;
+  }
+</style>
+<template>
+
+  <view>
+    <view class='container-header'>
+    <view class='header-item'>个人中心</view>
+    <view class='header-item flex-grow'>
+      <picker bindPickerChange='changePicker' value="{{index}}" range="{{array1}}">
+        <view>{{array1[index]}}</view>
+      </picker>
+     
+    </view>
+    <view class='header-item'>车辆状态</view>
+  </view>
+  <view>
+    <repeat for="{{pickArray}}" key="index" index="index" item="item">
+        <!-- 插入<script>脚本部分所声明的child组件，同时传入item -->
+        <view>{{item.name}}</view>
+    </repeat>
+  </view>
+  </view>
+
+</template>
+<script>
+  import wepy from 'wepy';
+  export default class Example extends wepy.page {
+    config = {
+      navigationBarTitleText: "test123",
+    };
+
+    data = {
+      index:0,
+      pickArray:[
+        {
+          name:"bens",
+          price:"100W",
+          id:0
+        },
+        {
+          name:"merce",
+          price:"150W",
+          id:1
+        },
+        {
+          name:"baoma",
+          price:"50W",
+          id:3
+        }
+      ],
+      array1: ['美国', '中国', '巴西', '日本'],
+    };
+
+    components = {};
+
+    methods = {};
+
+    events = {};
+
+    watch = {};
+
+    computed = {};
+
+    onLoad() { };
+
+    onShow() { };
+  }
+</script>
+

@@ -1,0 +1,49 @@
+<!--  -->
+<template>
+  <view class='container'>
+      <view>
+
+      </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  export default class Example extends wepy.component {
+    props = {
+        title: String,
+
+    // 父向子单向动态传值
+    syncTitle: {
+        type: String,
+        default: 'null'
+    },
+
+    twoWayTitle: {
+        type: String,
+        default: 'nothing',
+        twoWay: true//子向父单向传值
+    }
+    };
+
+    data = {};
+
+    components = {};
+
+    methods = {};
+
+    events = {};
+
+    watch = {};
+
+    computed = {};
+
+    onLoad() { };
+
+    onShow() { };
+  }
+</script>
+
+<style lang='less'>
+
+</style>
